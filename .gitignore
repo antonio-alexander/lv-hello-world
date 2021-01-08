@@ -17,6 +17,9 @@
 .cache/
 
 # Deplyoment binaries/files
+!builds/_builds.txt
 builds
+!distribution/_distribution.txt
 distribution
+!source/data/bin/_bin.txt
 source/data/bin/*.*
