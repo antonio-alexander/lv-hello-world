@@ -17,15 +17,15 @@
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
 		<Item Name="build.vi" Type="VI" URL="../build.vi"/>
-		<Item Name="lv-hello-world.lvlib" Type="Library" URL="../lv-hello-world/lv-hello-world.lvlib"/>
-		<Item Name="lv-webserver" Type="Web Service">
+		<Item Name="lv-hello-web" Type="Web Service">
 			<Property Name="Bld_buildSpecName" Type="Str"></Property>
-			<Property Name="Bld_version.build" Type="Int">12</Property>
+			<Property Name="Bld_version.build" Type="Int">13</Property>
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
 			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
 			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
 			<Property Name="ws.guid" Type="Str">{9348A3A6-4096-4CE5-9A2C-8B38ECE7B2E2}</Property>
 			<Property Name="ws.modifyLibraryFile" Type="Bool">true</Property>
+			<Property Name="ws.public_folder_name" Type="Str">resources</Property>
 			<Property Name="ws.remoteDebugging" Type="Bool">false</Property>
 			<Property Name="ws.removeLibraryItems" Type="Bool">true</Property>
 			<Property Name="ws.removePolyVIs" Type="Bool">true</Property>
@@ -36,8 +36,12 @@
 			<Property Name="ws.version.fix" Type="Int">0</Property>
 			<Property Name="ws.version.major" Type="Int">1</Property>
 			<Property Name="ws.version.minor" Type="Int">0</Property>
+			<Item Name="Public Content" Type="Folder" URL="../lv-hello-web/resources">
+				<Property Name="NI.DISK" Type="Bool">true</Property>
+			</Item>
+			<Item Name="Startup VIs" Type="Startup VIs Container"/>
 			<Item Name="Web Resources" Type="HTTP WebResources Container">
-				<Item Name="version.vi" Type="VI" URL="../lv-webserver/version.vi">
+				<Item Name="version.vi" Type="VI" URL="../lv-hello-web/version.vi">
 					<Property Name="ws.buffered" Type="Bool">true</Property>
 					<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
 					<Property Name="ws.keepInMemory" Type="Bool">true</Property>
@@ -52,7 +56,7 @@
 					<Property Name="ws.useHeaders" Type="Bool">true</Property>
 					<Property Name="ws.useStandardURL" Type="Bool">true</Property>
 				</Item>
-				<Item Name="hello_world.vi" Type="VI" URL="../lv-webserver/hello_world.vi">
+				<Item Name="hello_world.vi" Type="VI" URL="../lv-hello-web/hello_world.vi">
 					<Property Name="ws.buffered" Type="Bool">true</Property>
 					<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
 					<Property Name="ws.keepInMemory" Type="Bool">true</Property>
@@ -68,12 +72,13 @@
 					<Property Name="ws.useStandardURL" Type="Bool">true</Property>
 				</Item>
 			</Item>
-			<Item Name="Startup VIs" Type="Startup VIs Container"/>
 		</Item>
+		<Item Name="lv-hello-world.lvlib" Type="Library" URL="../lv-hello-world/lv-hello-world.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="lv-bin-7zip.lvlib" Type="Library" URL="/&lt;userlib&gt;/antonio-alexander/lv-bin-7zip/lv-bin-7zip.lvlib"/>
 				<Item Name="lv-bin-git.lvlib" Type="Library" URL="/&lt;userlib&gt;/antonio-alexander/lv-bin-git/lv-bin-git.lvlib"/>
+				<Item Name="lv-bin-windows.lvlib" Type="Library" URL="/&lt;userlib&gt;/antonio-alexander/lv-bin-windows/lv-bin-windows.lvlib"/>
 				<Item Name="lv-bin.lvlib" Type="Library" URL="/&lt;userlib&gt;/antonio-alexander/lv-bin/lv-bin/lv-bin.lvlib"/>
 				<Item Name="lv-build-interface.lvlib" Type="Library" URL="/&lt;userlib&gt;/antonio-alexander/lv-build-interface/lv-build-interface.lvlib"/>
 				<Item Name="lv-build.lvlib" Type="Library" URL="/&lt;userlib&gt;/antonio-alexander/lv-build/lv-build.lvlib"/>
@@ -104,6 +109,7 @@
 				<Item Name="Check if File or Folder Exists.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
 				<Item Name="Check Special Tags.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Check Special Tags.vi"/>
 				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
+				<Item Name="Close Registry Key.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Close Registry Key.vi"/>
 				<Item Name="Cluster to Array of VData__ogtk497EDDB02AA4B404E9F3AB1BAA994342.vi" Type="VI" URL="/&lt;vilib&gt;/JKI/_VIPM API_internal_deps/Cluster to Array of VData__ogtk497EDDB02AA4B404E9F3AB1BAA994342.vi"/>
 				<Item Name="Compare Two Paths.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Compare Two Paths.vi"/>
 				<Item Name="Convert property node font to graphics font.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Convert property node font to graphics font.vi"/>
@@ -111,6 +117,9 @@
 				<Item Name="DialogType.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/DialogType.ctl"/>
 				<Item Name="DialogTypeEnum.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/DialogTypeEnum.ctl"/>
 				<Item Name="Encode Section and Key Names__ogtk497EDDB02AA4B404E9F3AB1BAA994342.vi" Type="VI" URL="/&lt;vilib&gt;/JKI/_VIPM API_internal_deps/Encode Section and Key Names__ogtk497EDDB02AA4B404E9F3AB1BAA994342.vi"/>
+				<Item Name="Enum Registry Keys.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Enum Registry Keys.vi"/>
+				<Item Name="Enum Registry Values Simple.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Enum Registry Values Simple.vi"/>
+				<Item Name="Enum Registry Values.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Enum Registry Values.vi"/>
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
 				<Item Name="Error Code Database.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Code Database.vi"/>
 				<Item Name="ErrWarn.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/ErrWarn.ctl"/>
@@ -166,12 +175,21 @@
 				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
 				<Item Name="NI_WebServices.lvlib" Type="Library" URL="/&lt;vilib&gt;/wsapi/NI_WebServices.lvlib"/>
 				<Item Name="Not Found Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Not Found Dialog.vi"/>
+				<Item Name="Open Registry Key.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Open Registry Key.vi"/>
 				<Item Name="Parse State Queue__jki_lib_state_machine497EDDB02AA4B404E9F3AB1BAA994342.vi" Type="VI" URL="/&lt;vilib&gt;/JKI/_VIPM API_internal_deps/Parse State Queue__jki_lib_state_machine497EDDB02AA4B404E9F3AB1BAA994342.vi"/>
 				<Item Name="Parse String with TDs__ogtk497EDDB02AA4B404E9F3AB1BAA994342.vi" Type="VI" URL="/&lt;vilib&gt;/JKI/_VIPM API_internal_deps/Parse String with TDs__ogtk497EDDB02AA4B404E9F3AB1BAA994342.vi"/>
+				<Item Name="Query Registry Key Info.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Query Registry Key Info.vi"/>
 				<Item Name="Read INI Cluster__ogtk497EDDB02AA4B404E9F3AB1BAA994342.vi" Type="VI" URL="/&lt;vilib&gt;/JKI/_VIPM API_internal_deps/Read INI Cluster__ogtk497EDDB02AA4B404E9F3AB1BAA994342.vi"/>
 				<Item Name="Read Key (Variant)__ogtk497EDDB02AA4B404E9F3AB1BAA994342.vi" Type="VI" URL="/&lt;vilib&gt;/JKI/_VIPM API_internal_deps/Read Key (Variant)__ogtk497EDDB02AA4B404E9F3AB1BAA994342.vi"/>
 				<Item Name="Read Section Cluster__ogtk497EDDB02AA4B404E9F3AB1BAA994342.vi" Type="VI" URL="/&lt;vilib&gt;/JKI/_VIPM API_internal_deps/Read Section Cluster__ogtk497EDDB02AA4B404E9F3AB1BAA994342.vi"/>
 				<Item Name="Recursive File List.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Recursive File List.vi"/>
+				<Item Name="Registry Handle Master.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Registry Handle Master.vi"/>
+				<Item Name="Registry refnum.ctl" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Registry refnum.ctl"/>
+				<Item Name="Registry RtKey.ctl" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Registry RtKey.ctl"/>
+				<Item Name="Registry SAM.ctl" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Registry SAM.ctl"/>
+				<Item Name="Registry Simplify Data Type.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Registry Simplify Data Type.vi"/>
+				<Item Name="Registry View.ctl" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Registry View.ctl"/>
+				<Item Name="Registry WinErr-LVErr.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Registry WinErr-LVErr.vi"/>
 				<Item Name="Reshape 1D Array__ogtk497EDDB02AA4B404E9F3AB1BAA994342.vi" Type="VI" URL="/&lt;vilib&gt;/JKI/_VIPM API_internal_deps/Reshape 1D Array__ogtk497EDDB02AA4B404E9F3AB1BAA994342.vi"/>
 				<Item Name="Reshape Array to 1D VArray__ogtk497EDDB02AA4B404E9F3AB1BAA994342.vi" Type="VI" URL="/&lt;vilib&gt;/JKI/_VIPM API_internal_deps/Reshape Array to 1D VArray__ogtk497EDDB02AA4B404E9F3AB1BAA994342.vi"/>
 				<Item Name="Search and Replace Pattern.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Search and Replace Pattern.vi"/>
@@ -186,6 +204,7 @@
 				<Item Name="Simple Error Handler.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Simple Error Handler.vi"/>
 				<Item Name="Space Constant.vi" Type="VI" URL="/&lt;vilib&gt;/dlg_ctls.llb/Space Constant.vi"/>
 				<Item Name="Split Cluster TD__ogtk497EDDB02AA4B404E9F3AB1BAA994342.vi" Type="VI" URL="/&lt;vilib&gt;/JKI/_VIPM API_internal_deps/Split Cluster TD__ogtk497EDDB02AA4B404E9F3AB1BAA994342.vi"/>
+				<Item Name="STR_ASCII-Unicode.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/STR_ASCII-Unicode.vi"/>
 				<Item Name="Strip Units__ogtk497EDDB02AA4B404E9F3AB1BAA994342.vi" Type="VI" URL="/&lt;vilib&gt;/JKI/_VIPM API_internal_deps/Strip Units__ogtk497EDDB02AA4B404E9F3AB1BAA994342.vi"/>
 				<Item Name="subFile Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/express/express input/FileDialogBlock.llb/subFile Dialog.vi"/>
 				<Item Name="System Directory Type.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/sysdir.llb/System Directory Type.ctl"/>
@@ -204,10 +223,16 @@
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
 			<Item Name="AB_UI_Change_Path_from_Label.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/Builds/AppBuilder/AB_UI_Change_Path_from_Label.vi"/>
+			<Item Name="Advapi32.dll" Type="Document" URL="Advapi32.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
 			<Item Name="CDK_sTypeDef_Languages.ctl" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/Builds/Installer/CDK_sTypeDef_Languages.ctl"/>
 			<Item Name="CDK_sTypeDef_ProductVersion.ctl" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/Builds/Installer/CDK_sTypeDef_ProductVersion.ctl"/>
 			<Item Name="CDK_Utility_GetSetStringVersion.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/Builds/Installer/CDK_Utility_GetSetStringVersion.vi"/>
 			<Item Name="ItemRef.ctl" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/API/ItemRef.ctl"/>
+			<Item Name="kernel32.dll" Type="Document" URL="kernel32.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
 			<Item Name="mxLvDebugDisplayCaller.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/API/mxLvDebugDisplayCaller.vi"/>
 			<Item Name="mxLvDeleteProperty.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/API/mxLvDeleteProperty.vi"/>
 			<Item Name="mxLvErrorHandler.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/API/mxLvErrorHandler.vi"/>
@@ -240,7 +265,7 @@
 			</Item>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
-			<Property Name="NI.SortType" Type="Int">0</Property>
+			<Property Name="NI.SortType" Type="Int">3</Property>
 			<Item Name="hello-world" Type="EXE">
 				<Property Name="App_copyErrors" Type="Bool">true</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{8F89F373-D784-445B-8CE7-FCB0BF8C56C4}</Property>
@@ -255,7 +280,7 @@
 				<Property Name="Bld_localDestDir" Type="Path">../builds/application</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{DA78054E-293F-48F9-9C2C-0A7890BC451B}</Property>
-				<Property Name="Bld_version.build" Type="Int">1</Property>
+				<Property Name="Bld_version.build" Type="Int">5</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">hello-world.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/application/hello-world.exe</Property>
@@ -280,6 +305,88 @@
 				<Property Name="TgtF_productName" Type="Str">hello-world</Property>
 				<Property Name="TgtF_targetfileGUID" Type="Str">{1E4C1F1E-5FA6-4904-98D8-40AC7E1D9EDC}</Property>
 				<Property Name="TgtF_targetfileName" Type="Str">hello-world.exe</Property>
+			</Item>
+			<Item Name="hello-world_as_admin" Type="EXE">
+				<Property Name="App_copyErrors" Type="Bool">true</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{24CEDD6A-ED63-46E5-AC9A-31B37065AF54}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{BD0B7DD5-43DB-44C6-BCA6-3BA54CB18007}</Property>
+				<Property Name="App_INI_itemID" Type="Ref">/My Computer/data/hello_world_as_admin.ini</Property>
+				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
+				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{78D9A51D-6989-4DCB-B23F-FA85E5208261}</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">hello-world_as_admin</Property>
+				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
+				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
+				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+				<Property Name="Bld_localDestDir" Type="Path">../builds/application</Property>
+				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
+				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{ADB9D175-8589-4A01-A915-66F5A8A0849B}</Property>
+				<Property Name="Bld_version.build" Type="Int">27</Property>
+				<Property Name="Bld_version.major" Type="Int">1</Property>
+				<Property Name="Destination[0].destName" Type="Str">hello_world_as_admin.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">../builds/application/hello_world_as_admin.exe</Property>
+				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
+				<Property Name="Destination[0].type" Type="Str">App</Property>
+				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+				<Property Name="Destination[1].path" Type="Path">../builds/application/data</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
+				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/data/antonio-alexander.ico</Property>
+				<Property Name="Source[0].itemID" Type="Str">{4E7C614D-A4E2-43DB-B6B5-186E2957CB6C}</Property>
+				<Property Name="Source[0].type" Type="Str">Container</Property>
+				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/My Computer/lv-hello-world.lvlib/main_run_as_admin.vi</Property>
+				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[1].type" Type="Str">VI</Property>
+				<Property Name="SourceCount" Type="Int">2</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">hello-world_as_admin</Property>
+				<Property Name="TgtF_internalName" Type="Str">hello-world_as_admin</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2021 </Property>
+				<Property Name="TgtF_productName" Type="Str">hello-world_as_admin</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{8017AC45-2A78-459E-8002-30637EC7ACD7}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">hello_world_as_admin.exe</Property>
+			</Item>
+			<Item Name="hello-world-web" Type="EXE">
+				<Property Name="App_copyErrors" Type="Bool">true</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{92C2AD90-BC47-41A5-ACAB-F3B693007640}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{6B81DD88-BAE0-400B-A004-1FADA7300A6C}</Property>
+				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
+				<Property Name="App_webService.count" Type="Int">1</Property>
+				<Property Name="App_webService[0].itemID" Type="Ref">/My Computer/lv-hello-web</Property>
+				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{20D52F5F-72C2-42EB-92A9-32192B3965F0}</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">hello-world-web</Property>
+				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
+				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
+				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+				<Property Name="Bld_localDestDir" Type="Path">../builds/application</Property>
+				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{33890E35-9107-4BDE-A9C6-D1ED43A66161}</Property>
+				<Property Name="Bld_version.build" Type="Int">1</Property>
+				<Property Name="Bld_version.major" Type="Int">1</Property>
+				<Property Name="Destination[0].destName" Type="Str">hello-world-web.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">../builds/application/hello-world-web.exe</Property>
+				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
+				<Property Name="Destination[0].type" Type="Str">App</Property>
+				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+				<Property Name="Destination[1].path" Type="Path">../builds/application/data</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
+				<Property Name="Exe_cmdLineArgs" Type="Bool">true</Property>
+				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/data/antonio-alexander.ico</Property>
+				<Property Name="Source[0].itemID" Type="Str">{0DD698C2-DD3C-4F73-98CF-637D5244BF66}</Property>
+				<Property Name="Source[0].type" Type="Str">Container</Property>
+				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/My Computer/lv-hello-world.lvlib/main.vi</Property>
+				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[1].type" Type="Str">VI</Property>
+				<Property Name="SourceCount" Type="Int">2</Property>
+				<Property Name="TgtF_enableDebugging" Type="Bool">true</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">hello-world</Property>
+				<Property Name="TgtF_internalName" Type="Str">hello-world</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2020 </Property>
+				<Property Name="TgtF_productName" Type="Str">hello-world</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{2719CCFF-1FA3-4BF4-9855-5B96CAA20AF5}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">hello-world-web.exe</Property>
 			</Item>
 			<Item Name="hello-world-installer" Type="Installer">
 				<Property Name="Destination[0].name" Type="Str">antonio-alexander</Property>
@@ -366,7 +473,19 @@
 				<Property Name="Source[0].name" Type="Str">hello-world</Property>
 				<Property Name="Source[0].tag" Type="Ref">/My Computer/Build Specifications/hello-world</Property>
 				<Property Name="Source[0].type" Type="Str">EXE</Property>
-				<Property Name="SourceCount" Type="Int">1</Property>
+				<Property Name="Source[1].dest" Type="Str">{8BE23201-0E9F-41C6-A5CB-57B8965AAA9D}</Property>
+				<Property Name="Source[1].File[0].dest" Type="Str">{8BE23201-0E9F-41C6-A5CB-57B8965AAA9D}</Property>
+				<Property Name="Source[1].File[0].name" Type="Str">hello-world-web.exe</Property>
+				<Property Name="Source[1].File[0].Shortcut[0].destIndex" Type="Int">0</Property>
+				<Property Name="Source[1].File[0].Shortcut[0].name" Type="Str">hello-world-web</Property>
+				<Property Name="Source[1].File[0].Shortcut[0].subDir" Type="Str">lv-hello-world</Property>
+				<Property Name="Source[1].File[0].ShortcutCount" Type="Int">1</Property>
+				<Property Name="Source[1].File[0].tag" Type="Str">{2719CCFF-1FA3-4BF4-9855-5B96CAA20AF5}</Property>
+				<Property Name="Source[1].FileCount" Type="Int">1</Property>
+				<Property Name="Source[1].name" Type="Str">hello-world-web</Property>
+				<Property Name="Source[1].tag" Type="Ref">/My Computer/Build Specifications/hello-world-web</Property>
+				<Property Name="Source[1].type" Type="Str">EXE</Property>
+				<Property Name="SourceCount" Type="Int">2</Property>
 			</Item>
 			<Item Name="hello-world-updater" Type="Installer">
 				<Property Name="Destination[0].name" Type="Str">antonio-alexander</Property>
@@ -384,7 +503,7 @@
 				<Property Name="INST_buildSpecName" Type="Str">hello-world-updater</Property>
 				<Property Name="INST_defaultDir" Type="Str">{8BE23201-0E9F-41C6-A5CB-57B8965AAA9D}</Property>
 				<Property Name="INST_productName" Type="Str">lv-hello-world</Property>
-				<Property Name="INST_productVersion" Type="Str">0.0.0</Property>
+				<Property Name="INST_productVersion" Type="Str">1.0.1</Property>
 				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
 				<Property Name="InstSpecVersion" Type="Str">15008024</Property>
 				<Property Name="MSI_distID" Type="Str">{8620B0B7-C75B-40C6-BC37-E12863547228}</Property>
@@ -407,86 +526,19 @@
 				<Property Name="Source[0].name" Type="Str">hello-world</Property>
 				<Property Name="Source[0].tag" Type="Ref">/My Computer/Build Specifications/hello-world</Property>
 				<Property Name="Source[0].type" Type="Str">EXE</Property>
-				<Property Name="SourceCount" Type="Int">1</Property>
-			</Item>
-			<Item Name="hello-world-web" Type="EXE">
-				<Property Name="App_copyErrors" Type="Bool">true</Property>
-				<Property Name="App_INI_aliasGUID" Type="Str">{92C2AD90-BC47-41A5-ACAB-F3B693007640}</Property>
-				<Property Name="App_INI_GUID" Type="Str">{6B81DD88-BAE0-400B-A004-1FADA7300A6C}</Property>
-				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
-				<Property Name="App_webService.count" Type="Int">1</Property>
-				<Property Name="App_webService[0].itemID" Type="Ref">/My Computer/lv-webserver</Property>
-				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
-				<Property Name="Bld_buildCacheID" Type="Str">{20D52F5F-72C2-42EB-92A9-32192B3965F0}</Property>
-				<Property Name="Bld_buildSpecName" Type="Str">hello-world-web</Property>
-				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
-				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
-				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
-				<Property Name="Bld_localDestDir" Type="Path">../builds/application</Property>
-				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
-				<Property Name="Bld_previewCacheID" Type="Str">{33890E35-9107-4BDE-A9C6-D1ED43A66161}</Property>
-				<Property Name="Bld_version.major" Type="Int">1</Property>
-				<Property Name="Destination[0].destName" Type="Str">hello-world-web.exe</Property>
-				<Property Name="Destination[0].path" Type="Path">../builds/application/hello-world-web.exe</Property>
-				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
-				<Property Name="Destination[0].type" Type="Str">App</Property>
-				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-				<Property Name="Destination[1].path" Type="Path">../builds/application/data</Property>
-				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Exe_cmdLineArgs" Type="Bool">true</Property>
-				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/data/antonio-alexander.ico</Property>
-				<Property Name="Source[0].itemID" Type="Str">{0DD698C2-DD3C-4F73-98CF-637D5244BF66}</Property>
-				<Property Name="Source[0].type" Type="Str">Container</Property>
-				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/My Computer/lv-hello-world.lvlib/main.vi</Property>
-				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
-				<Property Name="Source[1].type" Type="Str">VI</Property>
+				<Property Name="Source[1].dest" Type="Str">{8BE23201-0E9F-41C6-A5CB-57B8965AAA9D}</Property>
+				<Property Name="Source[1].File[0].dest" Type="Str">{8BE23201-0E9F-41C6-A5CB-57B8965AAA9D}</Property>
+				<Property Name="Source[1].File[0].name" Type="Str">hello-world-web.exe</Property>
+				<Property Name="Source[1].File[0].Shortcut[0].destIndex" Type="Int">0</Property>
+				<Property Name="Source[1].File[0].Shortcut[0].name" Type="Str">hello-world-web</Property>
+				<Property Name="Source[1].File[0].Shortcut[0].subDir" Type="Str">lv-hello-world</Property>
+				<Property Name="Source[1].File[0].ShortcutCount" Type="Int">1</Property>
+				<Property Name="Source[1].File[0].tag" Type="Str">{2719CCFF-1FA3-4BF4-9855-5B96CAA20AF5}</Property>
+				<Property Name="Source[1].FileCount" Type="Int">1</Property>
+				<Property Name="Source[1].name" Type="Str">hello-world-web</Property>
+				<Property Name="Source[1].tag" Type="Ref">/My Computer/Build Specifications/hello-world-web</Property>
+				<Property Name="Source[1].type" Type="Str">EXE</Property>
 				<Property Name="SourceCount" Type="Int">2</Property>
-				<Property Name="TgtF_enableDebugging" Type="Bool">true</Property>
-				<Property Name="TgtF_fileDescription" Type="Str">hello-world</Property>
-				<Property Name="TgtF_internalName" Type="Str">hello-world</Property>
-				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2020 </Property>
-				<Property Name="TgtF_productName" Type="Str">hello-world</Property>
-				<Property Name="TgtF_targetfileGUID" Type="Str">{2719CCFF-1FA3-4BF4-9855-5B96CAA20AF5}</Property>
-				<Property Name="TgtF_targetfileName" Type="Str">hello-world-web.exe</Property>
-			</Item>
-			<Item Name="lv-hello-world-lvlibp" Type="Packed Library">
-				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
-				<Property Name="Bld_buildCacheID" Type="Str">{5276E289-2A6B-4BFC-B84E-0ACDB1A47472}</Property>
-				<Property Name="Bld_buildSpecName" Type="Str">lv-hello-world-lvlibp</Property>
-				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
-				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
-				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
-				<Property Name="Bld_localDestDir" Type="Path">../builds/lvlibp</Property>
-				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
-				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
-				<Property Name="Bld_previewCacheID" Type="Str">{3829C355-A776-4825-B50B-D278A2C8DED3}</Property>
-				<Property Name="Bld_version.major" Type="Int">1</Property>
-				<Property Name="Destination[0].destName" Type="Str">lv-hello-world.lvlibp</Property>
-				<Property Name="Destination[0].path" Type="Path">../builds/lvlibp/NI_AB_PROJECTNAME.lvlibp</Property>
-				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
-				<Property Name="Destination[0].type" Type="Str">App</Property>
-				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-				<Property Name="Destination[1].path" Type="Path">../builds/lvlibp</Property>
-				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="PackedLib_callersAdapt" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{B1E7D575-4F74-4984-81AB-D413DC5DD04A}</Property>
-				<Property Name="Source[0].type" Type="Str">Container</Property>
-				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/My Computer/lv-hello-world.lvlib</Property>
-				<Property Name="Source[1].Library.allowMissingMembers" Type="Bool">true</Property>
-				<Property Name="Source[1].Library.atomicCopy" Type="Bool">true</Property>
-				<Property Name="Source[1].Library.LVLIBPtopLevel" Type="Bool">true</Property>
-				<Property Name="Source[1].preventRename" Type="Bool">true</Property>
-				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
-				<Property Name="Source[1].type" Type="Str">Library</Property>
-				<Property Name="SourceCount" Type="Int">2</Property>
-				<Property Name="TgtF_fileDescription" Type="Str">lv-hello-world-lvlibp</Property>
-				<Property Name="TgtF_internalName" Type="Str">lv-hello-world-lvlibp</Property>
-				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2021 </Property>
-				<Property Name="TgtF_productName" Type="Str">lv-hello-world-lvlibp</Property>
-				<Property Name="TgtF_targetfileGUID" Type="Str">{08E4BAA3-E1FB-41E5-8E09-1A7D6126202E}</Property>
-				<Property Name="TgtF_targetfileName" Type="Str">lv-hello-world.lvlibp</Property>
 			</Item>
 			<Item Name="lv-hello-world-zip" Type="Zip File">
 				<Property Name="Absolute[0]" Type="Bool">false</Property>
@@ -498,8 +550,8 @@
 				<Property Name="IncludedItemCount" Type="Int">4</Property>
 				<Property Name="IncludedItems[0]" Type="Ref">/My Computer/data/antonio-alexander.ico</Property>
 				<Property Name="IncludedItems[1]" Type="Ref">/My Computer/lv-hello-world.lvlib</Property>
-				<Property Name="IncludedItems[2]" Type="Ref">/My Computer/lv-webserver/Web Resources/version.vi</Property>
-				<Property Name="IncludedItems[3]" Type="Ref">/My Computer/lv-webserver/Web Resources/hello_world.vi</Property>
+				<Property Name="IncludedItems[2]" Type="Ref">/My Computer/lv-hello-web/Web Resources/version.vi</Property>
+				<Property Name="IncludedItems[3]" Type="Ref">/My Computer/lv-hello-web/Web Resources/hello_world.vi</Property>
 				<Property Name="IncludeProject" Type="Bool">false</Property>
 				<Property Name="Path[0]" Type="Path">../../distribution/working/lv-hello-world.zip</Property>
 				<Property Name="ZipBase" Type="Str">NI_zipbasevirtual</Property>

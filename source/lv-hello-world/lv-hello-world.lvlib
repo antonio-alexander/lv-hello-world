@@ -8,5 +8,7 @@
 
 </Property>
 	<Item Name="main.vi" Type="VI" URL="../main.vi"/>
+	<Item Name="main_run_as_admin.vi" Type="VI" URL="../main_run_as_admin.vi"/>
+	<Item Name="main_web_run_as_admin.vi" Type="VI" URL="../main_web_run_as_admin.vi"/>
 	<Item Name="version.vi" Type="VI" URL="../version.vi"/>
 </Library>
