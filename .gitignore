@@ -15,3 +15,14 @@
 *.aliases
 *.lvlps
 .cache/
+
+# Deplyoment binaries/files
+!builds/_builds.txt
+builds
+!distribution/_distribution.txt
+distribution
+!source/data/bin/_bin.txt
+!source/data/bin/7z.sfx
+!source/data/bin/7z_original.sfx
+source/data/bin/*.*
+source/lv-builder*.json
