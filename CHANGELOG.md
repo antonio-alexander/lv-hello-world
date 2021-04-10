@@ -8,3 +8,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2021-02-20
 
 - Initial release
+- Added webserver
+- Added ability to run either executable as administrator
+- Added ability for application to determine whether or not it was running as an administrator
